@@ -1,0 +1,328 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Light theme variables */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f6f8fa;
+    --bg-tertiary: #f1f3f4;
+    --text-primary: #24292f;
+    --text-secondary: #656d76;
+    --text-muted: #8b949e;
+    --border-primary: #d1d9e0;
+    --border-secondary: #d8dee4;
+    --accent-primary: #0969da;
+    --accent-hover: #0550ae;
+    --code-bg: #f6f8fa;
+    --code-border: #d1d9e0;
+    --blockquote-bg: #ddf4ff;
+    --blockquote-border: #54aeff;
+    --table-header-bg: #f6f8fa;
+    --table-border: #d1d9e0;
+    --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Toast variables */
+    --toast-bg: #ffffff;
+    --toast-text: #24292f;
+    --toast-border: #d1d9e0;
+}
+
+.dark {
+    /* Dark theme variables */
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --border-primary: #30363d;
+    --border-secondary: #21262d;
+    --accent-primary: #58a6ff;
+    --accent-hover: #79c0ff;
+    --code-bg: #161b22;
+    --code-border: #30363d;
+    --blockquote-bg: #0c2d6b;
+    --blockquote-border: #1f6feb;
+    --table-header-bg: #161b22;
+    --table-border: #30363d;
+    --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    /* Toast variables */
+    --toast-bg: #161b22;
+    --toast-text: #f0f6fc;
+    --toast-border: #30363d;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-secondary);
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* GitHub-style markdown rendering */
+.markdown-body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text-primary);
+}
+
+.markdown-body h1 {
+    font-size: 2rem;
+    border-bottom: 1px solid var(--border-primary);
+    padding-bottom: 0.5rem;
+}
+
+.markdown-body h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--border-primary);
+    padding-bottom: 0.5rem;
+}
+
+.markdown-body h3 {
+    font-size: 1.25rem;
+}
+
+.markdown-body h4 {
+    font-size: 1rem;
+}
+
+.markdown-body h5 {
+    font-size: 0.875rem;
+}
+
+.markdown-body h6 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.markdown-body p {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.markdown-body strong {
+    font-weight: 600;
+}
+
+.markdown-body a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.markdown-body a:hover {
+    text-decoration: underline;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    list-style: revert;
+}
+
+.markdown-body ul {
+    list-style-type: disc;
+}
+
+.markdown-body ol {
+    list-style-type: decimal;
+}
+
+.markdown-body li {
+    margin-bottom: 0.25rem;
+    display: list-item;
+    list-style-position: outside;
+    line-height: 1.6;
+    position: relative;
+}
+
+.markdown-body ul li {
+    list-style-type: disc;
+}
+
+.markdown-body ol li {
+    list-style-type: decimal;
+}
+
+.markdown-body ul ul li {
+    list-style-type: circle;
+}
+
+.markdown-body ul ul ul li {
+    list-style-type: square;
+}
+
+/* Fix bullet point alignment to middle of text */
+.markdown-body ul li::marker,
+.markdown-body ol li::marker {
+    font-size: 1em;
+}
+
+.markdown-body ul li,
+.markdown-body ol li {
+    padding-left: 0.5rem;
+}
+
+.markdown-body pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
+
+.markdown-body code {
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 3px;
+    padding: 0.2em 0.4em;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.85em;
+}
+
+.markdown-body pre code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+}
+
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    border: 1px solid var(--table-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.markdown-body th,
+.markdown-body td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--table-border);
+}
+
+.markdown-body th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    border-bottom: 2px solid var(--table-border);
+}
+
+.markdown-body tr:last-child td {
+    border-bottom: none;
+}
+
+.markdown-body tr:nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
+.markdown-body blockquote {
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--blockquote-border);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.markdown-body blockquote p {
+    margin-bottom: 0;
+    color: var(--text-primary);
+}
+
+.markdown-body hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-primary);
+    margin: 2rem 0;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+/* Print styles for PDF generation */
+@media print {
+    .markdown-body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+        color: black !important;
+        page-break-after: avoid;
+    }
+
+    .markdown-body pre,
+    .markdown-body code {
+        background: #f5f5f5 !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .markdown-body table {
+        border: 1px solid #ddd !important;
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+        border: 1px solid #ddd !important;
+    }
+}

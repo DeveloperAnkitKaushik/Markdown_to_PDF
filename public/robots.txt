@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://markdown-to-pdfs.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 

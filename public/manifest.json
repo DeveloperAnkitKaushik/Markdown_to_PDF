@@ -1,0 +1,21 @@
+{
+  "name": "Markdown to PDF Converter by Ankit Kaushik",
+  "short_name": "MD to PDF",
+  "description": "Convert Markdown to PDF with perfect GitHub styling, dark mode, and responsive design. Created by Ankit Kaushik.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "author": "Ankit Kaushik",
+  "homepage_url": "https://markdown-to-pdfs.vercel.app"
+}
